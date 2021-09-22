@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ecommerce-4fc87": {
+      "hosting": {
+        "EcommerceApp": [
+          "ecommerce-4fc87"
+        ]
+      }
+    }
+  }
+}
