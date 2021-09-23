@@ -4,10 +4,11 @@
   display: flex;
   justify-content: space-between;
 
-  &__title{
-    font-size: 1.2em;
+  &__titles{
+    font-size: 1.6em;
     display: inline-flex;
     align-items: center;
+   
   }
 
   &__navigation{
