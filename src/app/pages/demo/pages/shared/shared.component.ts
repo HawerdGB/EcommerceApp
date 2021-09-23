@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-shared',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shared.component.scss']
 })
 export class SharedComponent implements OnInit {
+  form!: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.form = this.fb.group(
+      {
+        input:[null]
+      })
+
+  }
+
+  onPatchValue(){
+    this.form.patchValue({input : 'Hawerd Gutierrez'})
+  }
+
+  onSubmit(): void{
+     console.log('Boton submit presionado')
   }
 
 }
