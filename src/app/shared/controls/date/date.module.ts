@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RadiosComponent } from './radios.component';
+import { DateComponent } from './date.component';
 
 
 
 @NgModule({
   declarations: [
-    RadiosComponent
+    DateComponent
   ],
   imports: [
     CommonModule
-  ],
-  exports:[
-    RadiosComponent
   ]
 })
-export class RadiosModule { }
+export class DateModule { }
