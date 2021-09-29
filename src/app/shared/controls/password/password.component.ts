@@ -60,7 +60,7 @@ export class PasswordComponent implements OnInit, ControlValueAccessor {
  }
 
  onBlur(): void{
-     this.propagateTouched;
+     this.propagateTouched();
  }
 
  togglePassword(): void{
