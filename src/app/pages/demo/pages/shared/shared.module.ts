@@ -6,6 +6,7 @@ import { SharedComponent } from './shared.component';
 import { ButtonsModule} from '@app/shared/buttons'
 import {ControlsModule} from '@app/shared/controls';
 import { ReactiveFormsModule } from '@angular/forms';
+import { IndicatorsModule } from '@app/shared';
 
 
 
@@ -19,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SharedRoutingModule,
     ButtonsModule,
     ControlsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IndicatorsModule
   ]
 })
 export class SharedModule { }

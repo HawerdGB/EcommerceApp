@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {regex, regexErrors} from '@app/shared/utils';
+import {regex, regexErrors, markFormGroupTouched} from '@app/shared/utils';
 import { ControlItem } from '@app/models/frontend';
+import { NotificationService } from '@app/services';
+
 
 @Component({
   selector: 'app-shared',
@@ -15,7 +17,9 @@ export class SharedComponent implements OnInit {
 
   items!: ControlItem[];
 
-  constructor(private fb: FormBuilder) {
+  showSpinner = false;
+
+  constructor(private fb: FormBuilder, private notification: NotificationService) {
       this.isInline = true;
        this.items = [
          { label: 'uno', value:1},
@@ -82,15 +86,53 @@ export class SharedComponent implements OnInit {
   }
 
   onPatchValue():void{
-    this.form.patchValue({input : 'Hawerd Gutierrez'});
+    this.form.patchValue({
+      input : 'Hawerd Gutierrez',
+      password : 'hlgb2121',
+      autocomplete: 2,
+      select : 4,
+      checkboxes :[3],
+      radios:1,
+      date: new Date().getTime(),
+      dateRange:{
+        from: new Date(2022,5,10).getTime(),
+        to:new Date(2022,11,18).getTime()
+      }
+
+    });
   }
 
   onSubmit(): void{
-     console.log('Boton submit presionado')
+     console.log('Boton submit presionado');
+
+     if(!this.form.valid){
+       markFormGroupTouched(this.form);
+     }
   }
 
   organizarElemento(){
     this.isInline = !this.isInline
   }
+
+  onToggleDisabled():void{
+    if(this.form.enabled){
+      this.form.disable();
+    }else{
+      this.form.enable();
+    }
+  }
+
+  onToggleSpinner():void{
+     this.showSpinner = !this.showSpinner;
+  }
+
+  onSuccess():void{
+    this.notification.success("El procedimiento fue exitoso");
+  }
+
+  onError():void{
+    this.notification.error("Se encontraron errores en el proceso");
+  }
+
 
 }
