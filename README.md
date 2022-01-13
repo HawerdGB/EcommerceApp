@@ -1,4 +1,4 @@
-# EcommerceApp
+# EcommerceApp FrontEnd Angular
 ![image](https://user-images.githubusercontent.com/54670092/149334169-be3d6d5c-bc8c-4cdd-ba99-f84231922cd7.png)
 
 
