@@ -1,4 +1,6 @@
 # EcommerceApp
+![image](https://user-images.githubusercontent.com/54670092/149334169-be3d6d5c-bc8c-4cdd-ba99-f84231922cd7.png)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
 
